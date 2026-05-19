@@ -124,6 +124,21 @@
       }
     }
 
+    .link a{
+      padding: 10px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      text-align: center;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
   </style>
 </head>
 
@@ -164,6 +179,10 @@
 
     <div class="result" id="result"></div>
 
+    <div class="link">
+      <a target="_blank" href="https://github.com/prajwal003-web-developer/Calculator-With-Brain/">Github-></a>
+    </div>
+
   </div>
 
   <script>
@@ -176,10 +195,10 @@
       const logs = document.getElementById("logs");
       const result = document.getElementById("result");
 
-      // show logs only after clicking
+      
       logs.style.display = "block";
 
-      // reset previous data
+      
       logs.innerHTML = "";
       result.style.display = "none";
 
@@ -193,7 +212,7 @@
         "Finalizing calculations..."
       ];
 
-      // slower logs
+      
       for(let i = 0; i < messages.length; i++){
 
         await new Promise(resolve => setTimeout(resolve, 1200));
@@ -209,7 +228,7 @@
         logs.scrollTop = logs.scrollHeight;
       }
 
-      // wait little more before result
+      
       await new Promise(resolve => setTimeout(resolve, 1200));
 
       result.style.display = "block";
